@@ -32,21 +32,24 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: big ? 2 : 1,
-      child: ElevatedButton(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 32,
-            fontWeight: FontWeight.w200,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 1, bottom: 1),
+        child: ElevatedButton(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 32,
+              fontWeight: FontWeight.w200,
+            ),
           ),
-        ),
-        onPressed: () => cb(text),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(buttonsColors[color]),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(0),
+          onPressed: () => cb(text),
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(buttonsColors[color]),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+              ),
             ),
           ),
         ),
